@@ -1,0 +1,21 @@
+<div class="example">
+  {{#ivy-tabs selection="TabBaz" as |tabs|}}
+    {{#tabs.tablist class="nav nav-tabs" id="basic-tablist" tagName="ul" as |tablist|}}
+      <li class="{{if (eq selection "TabFoos") "active"}}" role="presentation">
+        {{#tablist.tab "TabFoos" on-select=(action (mut selection))}}{{#link-to 'foos'}}Tab Foos{{/link-to}}{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBar") "active"}}" role="presentation">
+        {{#tablist.tab "TabBar" on-select=(action (mut selection))}}{{#link-to 'foo.bar' model.fooId}}Tab Bar{{/link-to}}{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBaz") "active"}}" role="presentation">
+        {{#tablist.tab "TabBaz" on-select=(action (mut selection))}}Tab Baz{{/tablist.tab}}
+      </li>
+    {{/tabs.tablist}}
+
+    <div class="tab-content">
+      {{#tabs.tabpanel "TabBaz" class="tab-pane"}}
+        <p>Pork belly waistcoat tbh, pour-over lyft intelligentsia man bun sartorial mumblecore live-edge plaid pok pok salvia. Keytar jean shorts distillery, kogi deep v blog hexagon meditation vegan tumblr schlitz mixtape franzen 3 wolf moon. +1 semiotics pork belly cliche food truck, paleo hell of cred vegan polaroid. Microdosing DIY craft beer messenger bag deep v. Live-edge asymmetrical williamsburg vinyl, raw denim dreamcatcher brunch lyft tilde migas glossier hashtag cliche YOLO. Banjo gochujang locavore organic. Wayfarers chambray hammock, scenester direct trade 90's disrupt activated charcoal poke kinfolk fanny pack try-hard asymmetrical vaporware.</p>
+      {{/tabs.tabpanel}}
+    </div>
+  {{/ivy-tabs}}
+</div>

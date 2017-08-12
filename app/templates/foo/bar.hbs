@@ -1,0 +1,21 @@
+<div class="example">
+  {{#ivy-tabs selection="TabBar" as |tabs|}}
+    {{#tabs.tablist class="nav nav-tabs" id="basic-tablist" tagName="ul" as |tablist|}}
+      <li class="{{if (eq selection "TabFoos") "active"}}" role="presentation">
+        {{#tablist.tab "TabFoos" on-select=(action (mut selection))}}{{#link-to 'foos'}}Tab Foos{{/link-to}}{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBar") "active"}}" role="presentation">
+        {{#tablist.tab "TabBar" on-select=(action (mut selection))}}Tab Bar{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBaz") "active"}}" role="presentation">
+        {{#tablist.tab "TabBaz" on-select=(action (mut selection))}}{{#link-to 'foo.baz' model.fooId}}Tab Baz{{/link-to}}{{/tablist.tab}}
+      </li>
+    {{/tabs.tablist}}
+
+    <div class="tab-content">
+      {{#tabs.tabpanel "TabBar" class="tab-pane"}}
+        <p>Green juice vice PBR&amp;B +1 affogato. Sustainable fam, glossier letterpress mustache street art tilde 3 wolf moon viral. Enamel pin trust fund chia YOLO, PBR&amp;B organic ethical cardigan lomo migas pour-over shoreditch dreamcatcher. Enamel pin kickstarter godard organic authentic, butcher snackwave paleo celiac messenger bag roof party keffiyeh distillery. Direct trade skateboard narwhal thundercats, tumeric fam lumbersexual. Vice helvetica brooklyn, tbh edison bulb authentic austin post-ironic. Organic pickled YOLO godard.</p>
+      {{/tabs.tabpanel}}
+    </div>
+  {{/ivy-tabs}}
+</div>

@@ -1,0 +1,33 @@
+<div class="example">
+  {{#ivy-tabs selection=selection as |tabs|}}
+    {{#tabs.tablist class="nav nav-tabs" id="basic-tablist" tagName="ul" as |tablist|}}
+      <li class="{{if (eq selection "TabFoos") "active"}}" role="presentation">
+        {{#tablist.tab "TabFoos" on-select=(action (mut selection))}}Tab Foos{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBar") "active"}}" role="presentation">
+        {{#tablist.tab "TabBar" on-select=(action (mut selection))}}Tab Bar{{/tablist.tab}}
+      </li>
+      <li class="{{if (eq selection "TabBaz") "active"}}" role="presentation">
+        {{#tablist.tab "TabBaz" on-select=(action (mut selection))}}Tab Baz{{/tablist.tab}}
+      </li>
+    {{/tabs.tablist}}
+
+    <hr />
+    <div class="tab-content">
+      {{#tabs.tabpanel "TabFoos" class="tab-pane"}}
+        {{models-table
+          data=model.data
+          columns=model.columns
+          customMessages=model.customMessages}}
+      {{/tabs.tabpanel}}
+
+      {{#tabs.tabpanel "TabBar" class="tab-pane"}}
+        <p>This tab will be disabled</p>
+      {{/tabs.tabpanel}}
+
+      {{#tabs.tabpanel "TabBaz" class="tab-pane"}}
+        <p>This tab will be disabled</p>
+      {{/tabs.tabpanel}}
+    </div>
+  {{/ivy-tabs}}
+</div>

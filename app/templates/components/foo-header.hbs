@@ -1,0 +1,9 @@
+<p>Showing header content that is static</p>
+
+<br />
+
+{{log createButtonText}}
+{{#if createButtonText}}
+  <button {{action (route-action 'onCreateClick') createButtonText}}>Create {{createButtonText}}</button>
+{{/if}}
+{{yield}}
