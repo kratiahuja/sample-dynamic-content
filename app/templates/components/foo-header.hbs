@@ -2,8 +2,7 @@
 
 <br />
 
-{{log createButtonText}}
-{{#if createButtonText}}
-  <button {{action (route-action 'onCreateClick') createButtonText}}>Create {{createButtonText}}</button>
+{{#if type}}
+  <button {{action (route-action 'onCreateClick') type}}>Create {{createButtonText}}</button>
 {{/if}}
 {{yield}}
