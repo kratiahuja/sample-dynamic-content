@@ -18,13 +18,13 @@ export default Ember.Route.extend({
         data: [
           {
             id: '1',
-            something: 'Foo 1',
-            somewhere: 'Bar 1'
+            something: 'Bar 1',
+            somewhere: 'Baz 1'
           },
           {
             id: '2',
-            something: 'Foo 2',
-            somewhere: 'Bar 2'
+            something: 'Bar 2',
+            somewhere: 'Baz 2'
           }
         ],
         customMessages: {}
